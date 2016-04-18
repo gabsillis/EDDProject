@@ -19,6 +19,27 @@ function close() {
   //Runs when plugin is closed down
 };
  
+ 
+ 
+ 
+ 
+ 
+ function analyzeChord(){
+   //to take chord and analyze for type
+ }
+ 
+ function analyzeProgression(){
+   // to take a time range and analyze what type of progression
+ }
+ 
+ function analyzeStyle(){
+   
+ }
+ 
+ function reccomendChord(){
+   // build an array of chord reccomendations for the next item ordered from 0 index being best reccomendation; based on progression and style outputs
+ }
+ 
 var mscorePlugin = 
 {
    majorVersion:  1,
