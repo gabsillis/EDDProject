@@ -49,22 +49,23 @@ myApp.music.Chords = {
   iidim  : 23,
   iiidim : 24,
   ivdim  : 25,
-  vidim  : 26,
-  viidim : 27,
-  IM7    : 28, // major-major 7 chords
-  IIM7   : 29,
-  IIIM7  : 30,
-  IVM7   : 31,
-  VM7    : 32,
-  VIM7   : 33,
-  VIIM7  : 34,
-  im7    : 35, // minor-minor 7 chords
-  iim7   : 36,
-  iiim7  : 37,
-  ivm7   : 38,
-  vm7    : 39,
-  vim7   : 40,
-  viim7  : 41,
+  vdim   : 26,
+  vidim  : 27,
+  viidim : 28,
+  IM7    : 29, // major-major 7 chords
+  IIM7   : 30,
+  IIIM7  : 31,
+  IVM7   : 32,
+  VM7    : 33,
+  VIM7   : 34,
+  VIIM7  : 35,
+  im7    : 36, // minor-minor 7 chords
+  iim7   : 37,
+  iiim7  : 38,
+  ivm7   : 39,
+  vm7    : 40,
+  vim7   : 41,
+  viim7  : 42,
 }
  
  
