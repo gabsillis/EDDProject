@@ -19,8 +19,11 @@ function close() {
   //Runs when plugin is closed down
 };
  
+ // Define namespace
+ var myApp = myApp || {};
+ 
 // Chord Definitions
-my.namespace.DiatonicChords = {
+myApp.music.Chords = {
   I      : 1,
   II     : 2,
   III    : 3,
@@ -48,8 +51,30 @@ my.namespace.DiatonicChords = {
   ivdim  : 25,
   vidim  : 26,
   viidim : 27,
+  IM7    : 28, // major-major 7 chords
+  IIM7   : 29,
+  IIIM7  : 30,
+  IVM7   : 31,
+  VM7    : 32,
+  VIM7   : 33,
+  VIIM7  : 34,
+  im7    : 35, // minor-minor 7 chords
+  iim7   : 36,
+  iiim7  : 37,
+  ivm7   : 38,
+  vm7    : 39,
+  vim7   : 40,
+  viim7  : 41,
 }
  
+ 
+ /************* CHORD PROGRESSSION STYLE DEFINITIONS ****************/
+ 
+ // Jazz
+ myApp.music.JazzProgressions = {
+   ii_V_I        : [9,5,1]
+   ii7_V7_I7     : [36,32,28]
+ }
  
  
  
