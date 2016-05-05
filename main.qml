@@ -273,25 +273,71 @@ MuseScore {
 
 
     /*************** Writing Chord Functions ********/
+    var baseNote = 0 // MIDI number that will be set by key
+    var middleC = 60
+    
+    function setBaseNote(){
+        if(cursor.keySignature > 0){
+            baseNote = middleC + ((cursor.keySignature*7) % 12)
+        } else {
+            baseNote = middleC + ((cursor.keySignature*5) % 12)
+        }
+    }
+    
     function writeI(){
+        setBaseNote();
+        cursor.addNote(baseNote+0);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
     }
 
     function writeIV(){
+        setBaseNote();
+        cursor.addNote(baseNote+0);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+9);
     }
 
     function writeii(){
+        setBaseNote();
+        cursor.addNote(baseNote+2);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+9);
     }
     
     function writeiii(){
+        setBaseNote();
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+11);
     }
 
     function writeV(){
+        setBaseNote();
+        cursor.addNote(baseNote+2);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+11);
+    }
+    
+    function writeV7(){
+        setBaseNote();
+        cursor.addNote(baseNote+2);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+7);
     }
 
     function writeviiDim(){
+        setBaseNote();
+        cursor.addNote(baseNote+2);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote-1);
     }
 
     function writevi(){
+        setBaseNote();
+        cursor.addNote(baseNote-3);
+        cursor.addNote(baseNote+0);
+        cursor.addNote(baseNote+4);
     }
     /********* End Writing Chord Functions *********/
 
