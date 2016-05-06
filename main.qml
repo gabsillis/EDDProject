@@ -274,7 +274,7 @@ MuseScore {
     /*************** Writing Chord Functions ********/
     property var cursor : curScore.newCursor();
     property var baseNote : 0 // MIDI number that will be set by key
-    property var middleC : 60 // actually the c under middle c
+    property var middleC : 48 // actually the c under middle c
     
     function setBaseNote(){
         cursor.track = 0;
