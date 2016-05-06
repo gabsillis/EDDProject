@@ -270,13 +270,13 @@ MuseScore {
     }
 
     /*************** End Child Objects **************/
-
-
+    
     /*************** Writing Chord Functions ********/
-    var baseNote = 0 // MIDI number that will be set by key
-    var middleC = 60
+    property var baseNote : 0 // MIDI number that will be set by key
+    property var middleC : 60
     
     function setBaseNote(){
+        cursor.track = 0;
         if(cursor.keySignature > 0){
             baseNote = middleC + ((cursor.keySignature*7) % 12)
         } else {
@@ -286,65 +286,96 @@ MuseScore {
     
     function writeI(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote+0);
         cursor.addNote(baseNote+4);
         cursor.addNote(baseNote+7);
+        cursor.next();
     }
 
     function writeIV(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote+0);
         cursor.addNote(baseNote+5);
         cursor.addNote(baseNote+9);
+        cursor.next();
     }
 
     function writeii(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+5);
         cursor.addNote(baseNote+9);
+        cursor.next();
     }
     
     function writeiii(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote+4);
         cursor.addNote(baseNote+7);
         cursor.addNote(baseNote+11);
+        cursor.next();
     }
 
     function writeV(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+7);
         cursor.addNote(baseNote+11);
+        cursor.next();
     }
     
     function writeV7(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+5);
         cursor.addNote(baseNote+7);
+        cursor.next();
     }
 
     function writeviiDim(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+4);
         cursor.addNote(baseNote-1);
+        cursor.next();
     }
 
     function writevi(){
         setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,2);
         cursor.addNote(baseNote-3);
         cursor.addNote(baseNote+0);
         cursor.addNote(baseNote+4);
+        cursor.next();
     }
     /********* End Writing Chord Functions *********/
 
 
+    
+
+
     onRun: {
+        /******** Init ********/
         var cursor = curScore.newCursor();          
         cursor.rewind(0);
+        
+        
+    
         majMinDialog.open();
         Qt.quit();
     }
