@@ -272,8 +272,9 @@ MuseScore {
     /*************** End Child Objects **************/
     
     /*************** Writing Chord Functions ********/
+    property var cursor : curScore.newCursor();
     property var baseNote : 0 // MIDI number that will be set by key
-    property var middleC : 60
+    property var middleC : 60 // actually the c under middle c
     
     function setBaseNote(){
         cursor.track = 0;
@@ -285,84 +286,118 @@ MuseScore {
     }
     
     function writeI(){
+        curScore.startCmd()
         setBaseNote();
+        cursor.setDuration(1,8);
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        /* 
+        var tmpChord = newElement(Element.CHORD);
+        var tmpNote = [];
+        tmpNote[0] = newElement(Element.NOTE);
+        tmpNote[1] = newElement(Element.NOTE);
+        tmpNote[2] = newElement(Element.NOTE);
+        tmpNote[0].pitch = baseNote+0;
+        tmpChord.add(tmpNote[0]);
+        tmpNote[1].pitch = baseNote+4;
+        tmpChord.add(tmpNote[1]);
+        tmpNote[2].pitch = baseNote+7;
+        tmpChord.add(tmpNote[2]);
+        cursor.add(tmpChord);
+        */
+        
+         
         cursor.addNote(baseNote+0);
         cursor.addNote(baseNote+4);
         cursor.addNote(baseNote+7);
-        cursor.next();
+        cursor.addNote(baseNote+4);
+        //cursor.next();
+        curScore.endCmd();
     }
 
     function writeIV(){
+        curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        cursor.setDuration(1,8);
         cursor.addNote(baseNote+0);
         cursor.addNote(baseNote+5);
         cursor.addNote(baseNote+9);
-        cursor.next();
+        cursor.addNote(baseNote+5);
+        curScore.endCmd();
     }
 
     function writeii(){
+        curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        cursor.setDuration(1,8);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+5);
         cursor.addNote(baseNote+9);
-        cursor.next();
+        cursor.addNote(baseNote+5);
+        curScore.endCmd();
     }
     
     function writeiii(){
+        curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        cursor.setDuration(1,8);
         cursor.addNote(baseNote+4);
         cursor.addNote(baseNote+7);
         cursor.addNote(baseNote+11);
-        cursor.next();
+        cursor.addNote(baseNote+7);
+        curScore.endCmd();
     }
 
     function writeV(){
+        curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        cursor.setDuration(1,8);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+7);
         cursor.addNote(baseNote+11);
-        cursor.next();
+        cursor.addNote(baseNote+7);
+        curScore.endCmd();
     }
     
     function writeV7(){
+        curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        cursor.setDuration(1,8);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+5);
         cursor.addNote(baseNote+7);
-        cursor.next();
+        cursor.addNote(baseNote+5);
+        curScore.endCmd();
     }
 
     function writeviiDim(){
+        curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        cursor.setDuration(1,8);
         cursor.addNote(baseNote+2);
         cursor.addNote(baseNote+4);
         cursor.addNote(baseNote-1);
-        cursor.next();
+        cursor.addNote(baseNote+4);
+        curScore.endCmd();
     }
 
     function writevi(){
+        curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
-        cursor.setDuration(1,2);
+        cursor.setDuration(1,8);
         cursor.addNote(baseNote-3);
         cursor.addNote(baseNote+0);
         cursor.addNote(baseNote+4);
-        cursor.next();
+        cursor.addNote(baseNote+0);
+        curScore.endCmd();
     }
+
     /********* End Writing Chord Functions *********/
 
 
@@ -371,9 +406,8 @@ MuseScore {
 
     onRun: {
         /******** Init ********/
-        var cursor = curScore.newCursor();          
+        // var cursor = curScore.newCursor();          
         cursor.rewind(0);
-        
         
     
         majMinDialog.open();
