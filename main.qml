@@ -20,8 +20,8 @@ MuseScore {
             id:majMinDropDown
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "Major"; color: "Black"}
-                ListElement{ text: "Minor"; color: "Black"}
+                ListElement{ text: "Major: Has a Happy Sound"; color: "Black"}
+                ListElement{ text: "Minor: Has a Sad Sound"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -47,10 +47,10 @@ MuseScore {
             id:dropdownI
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "IV"; color: "Black"}
-                ListElement{ text: "V"; color: "Black"}
-                ListElement{ text: "vi"; color: "Black"}
-                ListElement{ text: "ii"; color: "Black"}
+                ListElement{ text: "IV: Standard happy progression"; color: "Black"}
+                ListElement{ text: "V: Another Reasonably happy progression"; color: "Black"}
+                ListElement{ text: "vi: Going to a minor/sad sound"; color: "Black"}
+                ListElement{ text: "ii: slightly minor sound - long progressions"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -91,8 +91,8 @@ MuseScore {
             id:dropdownvi
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "IV"; color: "Black"}
-                ListElement{ text: "ii"; color: "Black"}
+                ListElement{ text: "IV: Go into a happy sound"; color: "Black"}
+                ListElement{ text: "ii: continue the minor progression"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -123,9 +123,9 @@ MuseScore {
             id:dropdownIV
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "I"; color: "Black"}
-                ListElement{ text: "V"; color: "Black"}
-                ListElement{ text: "vii Diminished"; color: "Black"}
+                ListElement{ text: "I: Go back to the Home chord"; color: "Black"}
+                ListElement{ text: "V: V Leads into home chord well"; color: "Black"}
+                ListElement{ text: "vii Diminished: for a more interesting tense sound"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -161,8 +161,8 @@ MuseScore {
             id:dropdownii
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "IV"; color: "Black"}
-                ListElement{ text: "V"; color: "Black"}
+                ListElement{ text: "IV: happy chord to go further into progressions"; color: "Black"}
+                ListElement{ text: "V: Leads into home chord well"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -193,8 +193,8 @@ MuseScore {
             id:dropdownV
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "I"; color: "Black"}
-                ListElement{ text: "vi"; color: "Black"}
+                ListElement{ text: "I: Go to home chord - this will lead well"; color: "Black"}
+                ListElement{ text: "vi: go to minor"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -225,7 +225,7 @@ MuseScore {
             id:dropdownviiDim
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "iii"; color: "Black"}
+                ListElement{ text: "iii -currently only choice"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -251,7 +251,7 @@ MuseScore {
             id:dropdowniii
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "vi"; color: "Black"}
+                ListElement{ text: "vi- currently only choice"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -281,7 +281,7 @@ MuseScore {
         if(cursor.keySignature > 0){
             baseNote = middleC + ((cursor.keySignature*7) % 12)
         } else {
-            baseNote = middleC + ((cursor.keySignature*5) % 12)
+            baseNote = middleC + (-(cursor.keySignature*5) % 12)
         }
     }
     
