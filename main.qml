@@ -52,9 +52,11 @@ MuseScore {
             id: dropdownJazz
             model: ListModel{
             ListElement{ text: ""; color: "black"}
-            ListElement{ text: "iim7" smooth minor sound"; color:"black"}
-            ListElement{ text: "Imaj7 classic major sound"; color:"black"}
+            ListElement{ text: "iim7" smooth minor sound"; color:"Black"}
+            ListElement{ text: "Imaj7 classic major sound"; color:"Black"}
             }
+            width: 200
+            onCurrentIndexChanged:{}
         }
     }
 
