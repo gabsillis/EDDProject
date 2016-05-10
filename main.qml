@@ -20,8 +20,9 @@ MuseScore {
             id:majMinDropDown
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "Major: Has a Happy Sound"; color: "Black"}
-                ListElement{ text: "Minor: Has a Sad Sound"; color: "Black"}
+                ListElement{ text: "Major"; color: "Black"}
+                ListElement{ text: "Minor"; color: "Black"}
+                ListElement{ text: "Jazz Chords (Advanced)"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -35,7 +36,24 @@ MuseScore {
                     writevi()
                     majMinDialog.close()
                 }
+                if(majMinDropDown.currentIndex ==2){
+                    dialogJazz.open()
+                    majMinDialog.close()
+                }
             }
+        }
+    }
+    
+    Dialog{
+        id:dialogJazz
+        title: "Select First Chord"
+        ComboBox{
+            currentIndex: 0
+            id: dropdownJazz
+            model ListModel{
+            ListElement( text: ""}
+            ListElement{ text: "iim7" smooth minor sound"}
+            ListElement{ text: "Imaj7 classic major sound"}
         }
     }
 
