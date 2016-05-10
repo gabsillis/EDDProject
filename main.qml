@@ -51,7 +51,7 @@ MuseScore {
             currentIndex: 0
             id: dropdownJazz
             model: ListModel{
-            ListElement( text: ""}
+            ListElement{ text: ""}
             ListElement{ text: "iim7" smooth minor sound"}
             ListElement{ text: "Imaj7 classic major sound"}
             }
