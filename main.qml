@@ -56,9 +56,244 @@ MuseScore {
             ListElement{ text: "Imaj7 classic major sound"; color:"Black"}
             }
             width: 200
-            onCurrentIndexChanged:{}
+            onCurrentIndexChanged:{
+                switch(dropdownJazz.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogJazz.close()
+                        break;
+                    case 2:
+                        dialogImaj7.open()
+                        writeImaj7()
+                        dialogJazz.close()
+                        break;
+            
+            }
         }
     }
+    
+    Dialog{
+        id: dialogImaj7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownImaj7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "I7:"; color: "Black"}
+                ListElement{ text: "Imaj7_6: same chord but inverted use at end of progressions"; color: "Black"}
+                ListElement{ text: "vim7: relative minor-minor 7"; color: "Black"}
+                ListElement{ text: "II7: whole step upwards"; color: "Black"}
+                ListElement{ text: "V7: Dominant, strong leading"; color: "Black"}
+                ListElement{ text: "I#dim7: for stepping upwards style"; color: "Black"}
+                ListElement{ text: "iim7: another minor option"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownImaj7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogI7.open()
+                        writeI7()
+                        dialogImaj7.close()
+                        break;
+                    case 2:
+                        dialogImaj76.open()
+                        writeImaj76()
+                        dialogImaj7.close()
+                        break;
+                    case 3:
+                        dialogvim7.open()
+                        writevim7()
+                        dialogImaj7.close()
+                        break;
+                    case 4:
+                        dialogII7.open()
+                        writeII7()
+                        dialogImaj7.close()
+                        break;
+                    case 5:
+                        dialogV7.open()
+                        writeV7()
+                        dialogImaj7.close()
+                        break;
+                    case 6:
+                        dialogIsharpdim7.open()
+                        writeIsharpdim7()
+                        dialogImaj7.close()
+                        break;
+                    case 7:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogImaj7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogImaj76
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownImaj76
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "Imaj7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownImaj76.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogImaj7.open()
+                        writeImaj7()
+                        dialogImaj76.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogI7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownI7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "IVmaj7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownI7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogIVmaj7.open()
+                        writeIVmaj7()
+                        dialogI7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogvim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownvim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iiim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownImaj76.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiiim7.open()
+                        writeiiim7()
+                        dialogvim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogIsharpdim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownIsharpdim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownIsharpdim7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogIsharpdim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogII7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownII7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownII7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogII7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogIIsharpdim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownIIsharpdim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iiim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownIIsharpdim7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiiim7.open()
+                        writeiiim7()
+                        dialogIIsharpdim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    
 
     Dialog{
         id: dialogI
