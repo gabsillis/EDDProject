@@ -70,7 +70,7 @@ MuseScore {
                         writeImaj7()
                         dialogJazz.close()
                         break;
-            
+                }
             }
         }
     }
