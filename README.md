@@ -5,4 +5,4 @@ Gianni Absillis and Morgan Beatty
 
 Prototype: Plugin to Musescore
 
-Objective: Analyze scores while user is composing to reccomend best continuation.
+Objective: Provide a tool to help users develop chord progressions for the composing process.
