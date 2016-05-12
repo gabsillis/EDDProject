@@ -763,18 +763,6 @@ MuseScore {
         cursor.addNote(baseNote+7);
         curScore.endCmd();
     }
-    
-    function writeV7(){
-        curScore.startCmd()
-        setBaseNote();
-        cursor.track = 4;
-        cursor.setDuration(1,8);
-        cursor.addNote(baseNote+2);
-        cursor.addNote(baseNote+5);
-        cursor.addNote(baseNote+7);
-        cursor.addNote(baseNote+5);
-        curScore.endCmd();
-    }
 
     function writeviiDim(){
         curScore.startCmd()
