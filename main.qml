@@ -334,7 +334,7 @@ MuseScore {
             model: ListModel{
                 ListElement{ text: ""}
                 ListElement{ text: "IVmaj7:"; color: "Black"}
-                ListElement( text: "iiim7:"; color: "Black"}
+                ListElement{ text: "iiim7:"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
