@@ -201,7 +201,7 @@ MuseScore {
             }
             width: 200
             onCurrentIndexChanged: {
-                switch(dropdownImaj76.currentIndex) {
+                switch(dropdownvim7.currentIndex) {
                     case 0:
                         break;
                     case 1:
@@ -374,8 +374,8 @@ MuseScore {
                     case 0:
                         break;
                     case 1:
-                        dialogIVmaj7.open()
-                        writeIVmaj7()
+                        dialogIIsharpdim7.open()
+                        writeIIsharpdim7()
                         dialogiim7.close()
                         break;
                     case 2:
@@ -427,7 +427,7 @@ MuseScore {
             }
             width: 200
             onCurrentIndexChanged: {
-                switch(dropdownI7.currentIndex) {
+                switch(dropdownVI7.currentIndex) {
                     case 0:
                         break;
                     case 1:
@@ -812,7 +812,7 @@ MuseScore {
         curScore.endCmd();
     }
     
-    function writeImaj(){
+    function writeImaj7(){
         curScore.startCmd()
         setBaseNote();
         cursor.track = 4;
@@ -866,7 +866,7 @@ MuseScore {
         cursor.track = 4;
         cursor.setDuration(1,8);
         cursor.addNote(baseNote+1);
-        cursor.addNote(baseNote7);
+        cursor.addNote(baseNote+7);
         cursor.addNote(baseNote+10);
         cursor.addNote(baseNote+16);
         curScore.endCmd();
