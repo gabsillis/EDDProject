@@ -22,6 +22,7 @@ MuseScore {
                 ListElement{ text: ""}
                 ListElement{ text: "Major"; color: "Black"}
                 ListElement{ text: "Minor"; color: "Black"}
+                ListElement{ text: "Jazz Chords (Advanced)"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -35,8 +36,409 @@ MuseScore {
                     writevi()
                     majMinDialog.close()
                 }
+                if(majMinDropDown.currentIndex == 3){
+                    dialogJazz.open()
+                    majMinDialog.close()
+                }
             }
         }
+    }
+    
+    Dialog{
+        id:dialogJazz
+        title: "Select First Chord"
+        ComboBox{
+            currentIndex: 0
+            id: dropdownJazz
+            model: ListModel{
+            ListElement{ text: ""; color: "black"}
+            ListElement{ text: "iim7 smooth minor sound"; color:"Black"}
+            ListElement{ text: "Imaj7 classic major sound"; color:"Black"}
+            }
+            width: 200
+            onCurrentIndexChanged:{
+                switch(dropdownJazz.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogJazz.close()
+                        break;
+                    case 2:
+                        dialogImaj7.open()
+                        writeImaj7()
+                        dialogJazz.close()
+                        break;
+                }
+            }
+        }
+    }
+    
+    Dialog{
+        id: dialogImaj7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownImaj7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "I7:"; color: "Black"}
+                ListElement{ text: "Imaj7_6: same chord but inverted use at end of progressions"; color: "Black"}
+                ListElement{ text: "vim7: relative minor-minor 7"; color: "Black"}
+                ListElement{ text: "II7: whole step upwards"; color: "Black"}
+                ListElement{ text: "V7: Dominant, strong leading"; color: "Black"}
+                ListElement{ text: "I#dim7: for stepping upwards style"; color: "Black"}
+                ListElement{ text: "iim7: another minor option"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownImaj7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogI7.open()
+                        writeI7()
+                        dialogImaj7.close()
+                        break;
+                    case 2:
+                        dialogImaj76.open()
+                        writeImaj76()
+                        dialogImaj7.close()
+                        break;
+                    case 3:
+                        dialogvim7.open()
+                        writevim7()
+                        dialogImaj7.close()
+                        break;
+                    case 4:
+                        dialogII7.open()
+                        writeII7()
+                        dialogImaj7.close()
+                        break;
+                    case 5:
+                        dialogV7.open()
+                        writeV7()
+                        dialogImaj7.close()
+                        break;
+                    case 6:
+                        dialogIsharpdim7.open()
+                        writeIsharpdim7()
+                        dialogImaj7.close()
+                        break;
+                    case 7:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogImaj7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogImaj76
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownImaj76
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "Imaj7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownImaj76.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogImaj7.open()
+                        writeImaj7()
+                        dialogImaj76.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogI7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownI7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "IVmaj7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownI7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogIVmaj7.open()
+                        writeIVmaj7()
+                        dialogI7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogvim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownvim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iiim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownvim7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiiim7.open()
+                        writeiiim7()
+                        dialogvim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogIsharpdim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownIsharpdim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownIsharpdim7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogIsharpdim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogII7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownII7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownII7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogII7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogIIsharpdim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownIIsharpdim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iiim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownIIsharpdim7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiiim7.open()
+                        writeiiim7()
+                        dialogIIsharpdim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogIVmaj7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownIVmaj7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "vim7:"; color: "Black"}
+                ListElement{ text: "Imaj7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownIVmaj7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogvim7.open()
+                        writevim7()
+                        dialogIVmaj7.close()
+                        break;
+                    case 2:
+                        dialogImaj7.open()
+                        writeImaj7()
+                        dialogIVmaj7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogV7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownV7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "IVmaj7:"; color: "Black"}
+                ListElement{ text: "iiim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownV7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogIVmaj7.open()
+                        writeIVmaj7()
+                        dialogV7.close()
+                        break;
+                    case 2:
+                        dialogiiim7.open()
+                        writeiiim7()
+                        dialogV7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogiim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdowniim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "IIsharpdim7: half step up"; color: "Black"}
+                ListElement{ text: "V7: "; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdowniim7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogIIsharpdim7.open()
+                        writeIIsharpdim7()
+                        dialogiim7.close()
+                        break;
+                    case 2:
+                        dialogV7.open()
+                        writeV7()
+                        dialogiim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogiiim7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdowniiim7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "VI7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdowniiim7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogVI7.open()
+                        writeVI7()
+                        dialogiiim7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
+    }
+    
+    Dialog{
+        id: dialogVI7
+        title: "Select Next Chord"
+        ComboBox{
+            currentIndex: 0
+            id:dropdownVI7
+            model: ListModel{
+                ListElement{ text: ""}
+                ListElement{ text: "iim7:"; color: "Black"}
+            }
+            width: 200
+            onCurrentIndexChanged: {
+                switch(dropdownVI7.currentIndex) {
+                    case 0:
+                        break;
+                    case 1:
+                        dialogiim7.open()
+                        writeiim7()
+                        dialogVI7.close()
+                        break;
+                }
+            }
+        }
+        visible: false
     }
 
     Dialog{
@@ -47,10 +449,10 @@ MuseScore {
             id:dropdownI
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "IV"; color: "Black"}
-                ListElement{ text: "V"; color: "Black"}
-                ListElement{ text: "vi"; color: "Black"}
-                ListElement{ text: "ii"; color: "Black"}
+                ListElement{ text: "IV: Standard happy progression"; color: "Black"}
+                ListElement{ text: "V: Another Reasonably happy progression"; color: "Black"}
+                ListElement{ text: "vi: Going to a minor/sad sound"; color: "Black"}
+                ListElement{ text: "ii: slightly minor sound - long progressions"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -91,8 +493,8 @@ MuseScore {
             id:dropdownvi
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "IV"; color: "Black"}
-                ListElement{ text: "ii"; color: "Black"}
+                ListElement{ text: "IV: Go into a happy sound"; color: "Black"}
+                ListElement{ text: "ii: continue the minor progression"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -123,9 +525,9 @@ MuseScore {
             id:dropdownIV
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "I"; color: "Black"}
-                ListElement{ text: "V"; color: "Black"}
-                ListElement{ text: "vii Diminished"; color: "Black"}
+                ListElement{ text: "I: Go back to the Home chord"; color: "Black"}
+                ListElement{ text: "V: V Leads into home chord well"; color: "Black"}
+                ListElement{ text: "vii Diminished: for a more interesting tense sound"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -161,8 +563,8 @@ MuseScore {
             id:dropdownii
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "IV"; color: "Black"}
-                ListElement{ text: "V"; color: "Black"}
+                ListElement{ text: "IV: happy chord to go further into progressions"; color: "Black"}
+                ListElement{ text: "V: Leads into home chord well"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -193,8 +595,8 @@ MuseScore {
             id:dropdownV
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "I"; color: "Black"}
-                ListElement{ text: "vi"; color: "Black"}
+                ListElement{ text: "I: Go to home chord - this will lead well"; color: "Black"}
+                ListElement{ text: "vi: go to minor"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -225,7 +627,7 @@ MuseScore {
             id:dropdownviiDim
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "iii"; color: "Black"}
+                ListElement{ text: "iii -currently only choice"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -251,7 +653,7 @@ MuseScore {
             id:dropdowniii
             model: ListModel{
                 ListElement{ text: ""}
-                ListElement{ text: "vi"; color: "Black"}
+                ListElement{ text: "vi- currently only choice"; color: "Black"}
             }
             width: 200
             onCurrentIndexChanged: {
@@ -281,7 +683,7 @@ MuseScore {
         if(cursor.keySignature > 0){
             baseNote = middleC + ((cursor.keySignature*7) % 12)
         } else {
-            baseNote = middleC + ((cursor.keySignature*5) % 12)
+            baseNote = middleC + (-(cursor.keySignature*5) % 12)
         }
     }
     
@@ -361,18 +763,6 @@ MuseScore {
         cursor.addNote(baseNote+7);
         curScore.endCmd();
     }
-    
-    function writeV7(){
-        curScore.startCmd()
-        setBaseNote();
-        cursor.track = 4;
-        cursor.setDuration(1,8);
-        cursor.addNote(baseNote+2);
-        cursor.addNote(baseNote+5);
-        cursor.addNote(baseNote+7);
-        cursor.addNote(baseNote+5);
-        curScore.endCmd();
-    }
 
     function writeviiDim(){
         curScore.startCmd()
@@ -395,6 +785,150 @@ MuseScore {
         cursor.addNote(baseNote+0);
         cursor.addNote(baseNote+4);
         cursor.addNote(baseNote+0);
+        curScore.endCmd();
+    }
+    
+    function writeImaj76(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-3);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+12);
+        curScore.endCmd();
+    }
+    
+    function writeI7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+10);
+        curScore.endCmd();
+    }
+    
+    function writeImaj7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+11);
+        curScore.endCmd();
+    }
+    
+    function writevim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-3);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+12);
+        cursor.addNote(baseNote+16);
+        curScore.endCmd();
+    }
+    
+    function writeII7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+2);
+        cursor.addNote(baseNote+6);
+        cursor.addNote(baseNote+9);
+        curScore.endCmd();
+    }
+    
+    function writeIIsharpdim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+3);
+        cursor.addNote(baseNote+9);
+        cursor.addNote(baseNote+12);
+        cursor.addNote(baseNote+18);
+        curScore.endCmd();
+    }
+    
+    function writeIsharpdim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+1);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+10);
+        cursor.addNote(baseNote+16);
+        curScore.endCmd();
+    }
+    
+    function writeIVmaj7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+9);
+        cursor.addNote(baseNote+12);
+        curScore.endCmd();
+    }
+    
+    function writeV7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-1);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+11);
+        curScore.endCmd();
+    }
+    
+    function writeiim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+9);
+        cursor.addNote(baseNote+14);
+        curScore.endCmd();
+    }
+    
+    function writeiiim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+11);
+        cursor.addNote(baseNote+14);
+        cursor.addNote(baseNote+17);
+        curScore.endCmd();
+    }
+    
+    function writeVI7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-3);
+        cursor.addNote(baseNote+1);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
         curScore.endCmd();
     }
 
