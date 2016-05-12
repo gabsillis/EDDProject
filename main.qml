@@ -36,7 +36,7 @@ MuseScore {
                     writevi()
                     majMinDialog.close()
                 }
-                if(majMinDropDown.currentIndex ==2){
+                if(majMinDropDown.currentIndex == 3){
                     dialogJazz.open()
                     majMinDialog.close()
                 }
