@@ -799,6 +799,150 @@ MuseScore {
         cursor.addNote(baseNote+0);
         curScore.endCmd();
     }
+    
+    function writeImaj76(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-3);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+12);
+        curScore.endCmd();
+    }
+    
+    function writeI7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+10);
+        curScore.endCmd();
+    }
+    
+    function writeImaj(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+11);
+        curScore.endCmd();
+    }
+    
+    function writevim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-3);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+12);
+        cursor.addNote(baseNote+16);
+        curScore.endCmd();
+    }
+    
+    function writeII7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+2);
+        cursor.addNote(baseNote+6);
+        cursor.addNote(baseNote+9);
+        curScore.endCmd();
+    }
+    
+    function writeIIsharpdim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+3);
+        cursor.addNote(baseNote+9);
+        cursor.addNote(baseNote+12);
+        cursor.addNote(baseNote+18);
+        curScore.endCmd();
+    }
+    
+    function writeIsharpdim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+1);
+        cursor.addNote(baseNote7);
+        cursor.addNote(baseNote+10);
+        cursor.addNote(baseNote+16);
+        curScore.endCmd();
+    }
+    
+    function writeIVmaj7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+9);
+        cursor.addNote(baseNote+12);
+        curScore.endCmd();
+    }
+    
+    function writeV7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-1);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+7);
+        cursor.addNote(baseNote+11);
+        curScore.endCmd();
+    }
+    
+    function writeiim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote);
+        cursor.addNote(baseNote+5);
+        cursor.addNote(baseNote+9);
+        cursor.addNote(baseNote+14);
+        curScore.endCmd();
+    }
+    
+    function writeiiim7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+11);
+        cursor.addNote(baseNote+14);
+        cursor.addNote(baseNote+17);
+        curScore.endCmd();
+    }
+    
+    function writeVI7(){
+        curScore.startCmd()
+        setBaseNote();
+        cursor.track = 4;
+        cursor.setDuration(1,8);
+        cursor.addNote(baseNote-3);
+        cursor.addNote(baseNote+1);
+        cursor.addNote(baseNote+4);
+        cursor.addNote(baseNote+7);
+        curScore.endCmd();
+    }
 
     /********* End Writing Chord Functions *********/
 
